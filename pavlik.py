@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
-max_pages = 300
+max_pages = 1
 before_page = 'https://franchiseforeveryone.com/index.php?lan=ru&page='
 after_page = '&cou=12'
 
