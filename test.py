@@ -1,12 +1,28 @@
-import turtle
-def draw_rainbow_circle():
- colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
- turtle.speed(0)
- for i in range(180):
-    for color in colors:
-        turtle.color(color)
-        turtle.forward(2)
-        turtle.right(1)
-    turtle.right(2)
- turtle.done()
-draw_rainbow_circle()
+import matplotlib.pyplot as plt
+# "?@545;5=85 :>>@48=0B 4;O =04?8A8 "Dart Vader"
+dart_vader_points = {
+ 'D': [(1, 3), (1, 2), (1, 1), (2, 3), (2, 1), (3, 3), (3, 1), (4, 2)],
+ 'a': [(6, 2), (7, 1), (8, 2), (6, 3), (8, 3)],
+ 'r': [(10, 3), (10, 2), (10, 1), (11, 1)],
+ 't': [(14, 3), (14, 2), (14, 1), (13, 1), (15, 1)],
+ 'V': [(17, 1), (18, 2), (19, 3), (20, 2), (21, 1)],
+ 'a2': [(23, 2), (24, 1), (25, 2), (23, 3), (25, 3)],
+ 'd': [(27, 3), (27, 2), (27, 1), (28, 3), (28, 1), (29, 3), (29, 1), (30, 2)],
+ 'e': [(32, 1), (32, 2), (32, 3), (33, 1), (33, 3)],
+ 'r2': [(35, 3), (35, 2), (35, 1), (36, 1)],
+}
+# A>740ё< =>2CN D83C@C 8 4>102;O5< : =59 =01>@ >A59(ax)
+fig, ax = plt.subplots()
+# $8AC5< :064CN B>G:C
+for letter, points in dart_vader_points.items():
+    for point in points:
+        ax.plot(*point, 'bo')
+# 0405< ?0@0<5B@K 87>1@065=8O (3@0=8FK ?> x, y)
+ax.set_ylim(0, 4)
+ax.set_xlim(0, 37)
+# CAB0=02;8205< >48=0:>2>5 A>>B=>H5=85 <0AHB010 B>G5:
+ax.set_aspect('equal')
+# 8=25@B8@C5< >AL Y
+plt.gca().invert_yaxis()
+# ?>:07K205< 3@0D8:
+plt.show()
